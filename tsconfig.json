@@ -6,11 +6,12 @@
     "moduleResolution": "NodeNext",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "strict": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
     "noUncheckedIndexedAccess": true,
+    "strict": true,
     "outDir": "dist",
     "rootDir": "src"
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*"]
 }
