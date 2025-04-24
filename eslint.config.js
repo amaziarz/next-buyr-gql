@@ -20,7 +20,11 @@ export default tseslint.config(
       globals: globals.node,
       parserOptions: {
         projectService: {
-          allowDefaultProject: ['eslint.config.js', '.graphqlrc.ts'],
+          allowDefaultProject: [
+            'eslint.config.js',
+            '.graphqlrc.ts',
+            'scripts/*.ts',
+          ],
         },
         tsconfigRootDir: import.meta.dirname,
       },
@@ -28,4 +32,9 @@ export default tseslint.config(
   },
   globalIgnores(['src/graphql/*.generated.ts']),
   includeIgnoreFile(gitignorePath),
+  {
+    rules: {
+      '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+    },
+  },
 );
