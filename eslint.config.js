@@ -4,10 +4,8 @@ import prettier from 'eslint-config-prettier/flat';
 import perfectionist from 'eslint-plugin-perfectionist';
 import { globalIgnores } from 'eslint/config';
 import globals from 'globals';
-import { fileURLToPath } from 'node:url';
+import { join } from 'node:path';
 import tseslint from 'typescript-eslint';
-
-const gitignorePath = fileURLToPath(new URL('.gitignore', import.meta.url));
 
 export default tseslint.config(
   eslint.configs.recommended,
@@ -31,7 +29,7 @@ export default tseslint.config(
     },
   },
   globalIgnores(['src/graphql/*.generated.ts']),
-  includeIgnoreFile(gitignorePath),
+  includeIgnoreFile(join(import.meta.dirname, '.gitignore')),
   {
     rules: {
       '@typescript-eslint/consistent-type-definitions': ['error', 'type'],

@@ -1,6 +1,7 @@
 {
   "name": "next-buyr-gql",
   "version": "1.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "codegen": "graphql-codegen --config .graphqlrc.ts",
