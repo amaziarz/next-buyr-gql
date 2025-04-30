@@ -1,4 +1,5 @@
 import type { GraphQLResolveInfo } from 'graphql';
+import type { GraphQLContext } from '../utils/context.ts';
 export type Maybe<T> = T | null | undefined;
 export type InputMaybe<T> = T | null | undefined;
 export type Exact<T extends { [key: string]: unknown }> = {
@@ -175,7 +176,7 @@ export type ResolversParentTypes = {
 };
 
 export type ProductResolvers<
-  ContextType = any,
+  ContextType = GraphQLContext,
   ParentType extends
     ResolversParentTypes['Product'] = ResolversParentTypes['Product'],
 > = {
@@ -188,7 +189,7 @@ export type ProductResolvers<
 };
 
 export type QueryResolvers<
-  ContextType = any,
+  ContextType = GraphQLContext,
   ParentType extends
     ResolversParentTypes['Query'] = ResolversParentTypes['Query'],
 > = {
@@ -200,7 +201,7 @@ export type QueryResolvers<
   >;
 };
 
-export type Resolvers<ContextType = any> = {
+export type Resolvers<ContextType = GraphQLContext> = {
   Product?: ProductResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
 };

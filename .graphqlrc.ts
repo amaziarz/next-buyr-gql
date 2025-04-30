@@ -12,7 +12,9 @@ const config = {
         },
       },
       typesPluginsConfig: {
+        contextType: '../utils/context.ts#GraphQLContext',
         optionalInfoArgument: true,
+        useTypeImports: true,
       },
     }),
   },
